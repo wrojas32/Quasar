@@ -34,7 +34,7 @@ class LocationServiceImplTest {
         SatellitesRequest satellitesRequest = new SatellitesRequest();
         satellitesRequest.setSatellites(getSatellites());
 
-        LocationResponse locationResponse = locationService.getLocationAndMessage(satellitesRequest);
+        LocationResponse locationResponse = locationService.saveAndGetLocationAndMessage(satellitesRequest);
         assertEquals(locationResponse.getPosition().getX(), "1,0");
         assertEquals(locationResponse.getPosition().getY(), "0,0");
         assertEquals(locationResponse.getMessage(), "este es un mensaje secreto");

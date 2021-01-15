@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.mercadolibre</groupId>
 	<artifactId>Quasar</artifactId>
-	<version>0.0.1</version>
+	<version>1.0.0</version>
 	<name>Quasar</name>
-	<description>Application for getting location and message from Quasar ship</description>
+	<description>Application for getting location and message from Quasar spaceship</description>
 
 	<properties>
 		<java.version>11</java.version>
@@ -56,6 +56,16 @@
 			<artifactId>junit</artifactId>
 			<version>4.13</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.4.0</version>
 		</dependency>
 
 	</dependencies>

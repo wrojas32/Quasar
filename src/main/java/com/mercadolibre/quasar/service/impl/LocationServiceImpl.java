@@ -44,21 +44,11 @@ public class LocationServiceImpl implements LocationService {
     private Double satoY;
 
     @Override
-    public LocationResponse getLocationAndMessage(SatellitesRequest satellitesRequest) {
-        SatelliteDto satelliteDto = getMessagesAndDistances(satellitesRequest.getSatellites());
+    public LocationResponse saveAndGetLocationAndMessage(SatellitesRequest satellitesRequest) {
+
         satellitesRequest.getSatellites().forEach(this::saveSatellite);
-        String[] position = getLocation(satelliteDto.getKenobiDistance(), satelliteDto.getSkywalkerDistance(),
-            satelliteDto.getSatoDistance());
-        validateFinalPosition(position);
-        String finalMessage = String.join(" ", Utilities.getMessage(satelliteDto.getMessages()));
 
-        return LocationResponse.builder().position(Position.builder().x(position[0]).y(position[1]).build())
-            .message(finalMessage).build();
-    }
-
-    private String[] getLocation(float... distances){
-        return Utilities.calculateThreeCircleIntersection(kenobiX, kenobiY, distances[0], skywalkerX, skywalkerY,
-            distances[1], satoX, satoY,  distances[2]);
+        return getLocationResponse(satellitesRequest.getSatellites());
     }
 
     @Override
@@ -69,23 +59,34 @@ public class LocationServiceImpl implements LocationService {
 
     @Override
     public LocationResponse getLocationAndMessage() {
-        List<SatelliteEntity> satelliteList =  satelliteRepository.findAll();
+        List<SatelliteEntity> satelliteEntities =  satelliteRepository.findAll();
         ModelMapper modelMapper = new ModelMapper();
-        List<Satellite> satellites = satelliteList.stream().map(entity-> modelMapper.map(entity, Satellite.class))
+        List<Satellite> satellites = satelliteEntities.stream().map(entity-> modelMapper.map(entity, Satellite.class))
             .collect(Collectors.toList());
 
-        SatelliteDto satelliteDto = getMessagesAndDistances(satellites);
+        return getLocationResponse(satellites);
+    }
+
+    private String[] getLocation(float... distances){
+        return Utilities.calculateThreeCircleIntersection(kenobiX, kenobiY, distances[0], skywalkerX, skywalkerY,
+            distances[1], satoX, satoY,  distances[2]);
+    }
+
+    private LocationResponse getLocationResponse(List<Satellite> satellites){
+        SatelliteDto satelliteDto = getMessagesAndDistancesDto(satellites);
 
         String[] position = getLocation(satelliteDto.getKenobiDistance(), satelliteDto.getSkywalkerDistance(),
             satelliteDto.getSatoDistance());
+
         validateFinalPosition(position);
+
         String finalMessage = String.join(" ", Utilities.getMessage(satelliteDto.getMessages()));
 
         return LocationResponse.builder().position(Position.builder().x(position[0]).y(position[1]).build())
             .message(finalMessage).build();
     }
 
-    private SatelliteDto getMessagesAndDistances(List<Satellite> satellitesList){
+    private SatelliteDto getMessagesAndDistancesDto(List<Satellite> satellitesList){
         SatelliteDto satelliteDto = new SatelliteDto();
         String[][] messages = new String[3][];
         satellitesList.forEach(s-> {
