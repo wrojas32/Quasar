@@ -1,8 +1,8 @@
 # Fuego de Quasar
 
-La aplicacion tiene la capacidad de obtener la localización de una nave perdida y también el contenido del mensaje emitido.
+La aplicacion tiene la capacidad de obtener la localización de una nave espacial perdida y también el contenido del mensaje de auxilio emitido.
 
-Para este fin existen 3 satélites que se encargan de tringular la posición de la nave teniendo encuenta la distancia desde la cual fue recibido el mensaje en cada satélite.
+Para este fin existen 3 satélites que se encargan de tringular la posición de la nave teniendo en cuenta la distancia desde la cual fue recibido el mensaje.
 
 ## Tecnologias Usadas
 
@@ -10,6 +10,7 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
 - Java 11
 - Base de datos en memoria H2
 - Junit 4.13
+
 
 ## Servicios Rest Desarrollados
 
