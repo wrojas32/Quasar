@@ -35,8 +35,8 @@ class LocationServiceImplTest {
         satellitesRequest.setSatellites(getSatellites());
 
         LocationResponse locationResponse = locationService.getLocationAndMessage(satellitesRequest);
-        assertEquals(locationResponse.getPosition().getX(), "100,0");
-        assertEquals(locationResponse.getPosition().getY(), "100,0");
+        assertEquals(locationResponse.getPosition().getX(), "100.0");
+        assertEquals(locationResponse.getPosition().getY(), "100.0");
         assertEquals(locationResponse.getMessage(), "este es un mensaje secreto");
     }
 
@@ -44,8 +44,8 @@ class LocationServiceImplTest {
     void testGetLocationAndMessage() {
         getSatellites().forEach(satellite -> locationService.saveSatellite(satellite));
         LocationResponse locationResponse = locationService.getLocationAndMessage();
-        assertEquals(locationResponse.getPosition().getX(), "100,0");
-        assertEquals(locationResponse.getPosition().getY(), "100,0");
+        assertEquals(locationResponse.getPosition().getX(), "100.0");
+        assertEquals(locationResponse.getPosition().getY(), "100.0");
         assertEquals(locationResponse.getMessage(), "este es un mensaje secreto");
 
     }

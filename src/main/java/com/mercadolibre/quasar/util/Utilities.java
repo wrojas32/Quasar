@@ -3,6 +3,8 @@ package com.mercadolibre.quasar.util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Locale;
+
 public class Utilities {
 
     private static final double EPSILON = 0.001;
@@ -77,13 +79,13 @@ public class Utilities {
         double d2 = Math.sqrt((dy*dy) + (dx*dx));
 
         if(Math.abs(d1 - distance3) < EPSILON) {
-            intertectionPosition[0] = String.format("%.1f",intersectionPoint1_x);
-            intertectionPosition[1] = String.format("%.1f",intersectionPoint1_y);
+            intertectionPosition[0] = String.format(Locale.US,"%.1f",intersectionPoint1_x);
+            intertectionPosition[1] = String.format(Locale.US, "%.1f",intersectionPoint1_y);
             LOG.info("INTERSECTION Circle1 AND Circle2 AND Circle3: (" + String.format("%.1f",intersectionPoint1_x) + "," + String.format("%.1f",intersectionPoint1_y) + ")");
         }
         else if(Math.abs(d2 - distance3) < EPSILON) {
-            intertectionPosition[0] = String.format("%.1f",intersectionPoint2_x);
-            intertectionPosition[1] = String.format("%.1f",intersectionPoint2_y);
+            intertectionPosition[0] = String.format(Locale.US,"%.1f",intersectionPoint2_x);
+            intertectionPosition[1] = String.format(Locale.US,"%.1f",intersectionPoint2_y);
             LOG.info("INTERSECTION Circle1 AND Circle2 AND Circle3: (" + String.format("%.1f",intersectionPoint2_x)+ "," + String.format("%.1f",intersectionPoint2_y) + ")"); //here was an error
         }
         else {
