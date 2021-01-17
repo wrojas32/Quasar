@@ -4,7 +4,7 @@ La aplicacion tiene la capacidad de obtener la localización de una nave espacia
 
 Para este fin existen 3 satélites que se encargan de tringular la posición de la nave teniendo en cuenta la distancia desde la cual fue recibido el mensaje.
 
-## Tecnologias Usadas
+## Tecnologías Usadas
 
 - Spring Boot 2.4.1
 - Java 11
@@ -16,7 +16,7 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
 
 - ### Servicio topsecret
 
-  Servicio que envia en el body la informacion de cada satélite para obtener la ubicacion y mensaje enviado por la nave.
+  Servicio que envía en el body la información de cada satélite para obtener la ubicación y mensaje enviado por la nave.
 
   path: POST /topsecret
   
@@ -54,7 +54,7 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
 
 - ### Servicio topsecret_split
 
-  Servicio encargado de guardar la informacion de cada satélite de manera individual.
+  Servicio encargado de guardar la información de cada satélite de manera individual.
 
   path: POST /topsecret_split/{satellite_name}
   
