@@ -21,6 +21,6 @@ public class LocationController {
     @ApiOperation(value = "Save satellites data and get location and message from spaceship")
     @PostMapping
     public ResponseEntity<LocationResponse> getLocationAndMessage(@RequestBody SatellitesRequest satellitesRequest){
-        return ResponseEntity.ok(locationService.saveAndGetLocationAndMessage(satellitesRequest));
+        return ResponseEntity.ok(locationService.getLocationAndMessage(satellitesRequest));
     }
 }

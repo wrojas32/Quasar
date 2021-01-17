@@ -6,7 +6,7 @@ import com.mercadolibre.quasar.domain.SatelliteEntity;
 import com.mercadolibre.quasar.domain.SatellitesRequest;
 
 public interface LocationService {
-    LocationResponse saveAndGetLocationAndMessage(SatellitesRequest satellitesRequest);
+    LocationResponse getLocationAndMessage(SatellitesRequest satellitesRequest);
     SatelliteEntity saveSatellite(Satellite satellite);
     LocationResponse getLocationAndMessage();
 }

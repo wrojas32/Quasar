@@ -9,10 +9,10 @@ class UtilitiesTest {
 
     @Test
     void calculateThreeCircleIntersection() {
-        String[] intertectionPosition = Utilities.calculateThreeCircleIntersection(3, 0, 2, 1, 2, 2,
-            1, -3, 3);
-        assertEquals(intertectionPosition[0], "1,0");
-        assertEquals(intertectionPosition[1], "0,0");
+        String[] intertectionPosition = Utilities.calculateThreeCircleIntersection(-500, -200, 670.82, 100, -100, 200,
+            500, 100, 400);
+        assertEquals(intertectionPosition[0], "100,0");
+        assertEquals(intertectionPosition[1], "100,0");
     }
 
     @Test

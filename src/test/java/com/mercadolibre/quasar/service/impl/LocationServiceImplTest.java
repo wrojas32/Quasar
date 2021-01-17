@@ -34,9 +34,9 @@ class LocationServiceImplTest {
         SatellitesRequest satellitesRequest = new SatellitesRequest();
         satellitesRequest.setSatellites(getSatellites());
 
-        LocationResponse locationResponse = locationService.saveAndGetLocationAndMessage(satellitesRequest);
-        assertEquals(locationResponse.getPosition().getX(), "1,0");
-        assertEquals(locationResponse.getPosition().getY(), "0,0");
+        LocationResponse locationResponse = locationService.getLocationAndMessage(satellitesRequest);
+        assertEquals(locationResponse.getPosition().getX(), "100,0");
+        assertEquals(locationResponse.getPosition().getY(), "100,0");
         assertEquals(locationResponse.getMessage(), "este es un mensaje secreto");
     }
 
@@ -44,8 +44,8 @@ class LocationServiceImplTest {
     void testGetLocationAndMessage() {
         getSatellites().forEach(satellite -> locationService.saveSatellite(satellite));
         LocationResponse locationResponse = locationService.getLocationAndMessage();
-        assertEquals(locationResponse.getPosition().getX(), "1,0");
-        assertEquals(locationResponse.getPosition().getY(), "0,0");
+        assertEquals(locationResponse.getPosition().getX(), "100,0");
+        assertEquals(locationResponse.getPosition().getY(), "100,0");
         assertEquals(locationResponse.getMessage(), "este es un mensaje secreto");
 
     }
@@ -60,16 +60,16 @@ class LocationServiceImplTest {
 
     private List<Satellite> getSatellites(){
         return new ArrayList<>() {{
-            add(Satellite.builder().name("kenobi").distance(2).message(new String[] {"este", "", "", "mensaje", ""}).build());
-            add(Satellite.builder().name("skywalker").distance(2).message(new String[] {"", "es", "", "", "secreto"}).build());
-            add(Satellite.builder().name("sato").distance(3).message(new String[] {"este", "", "un", "", ""}).build());
+            add(Satellite.builder().name("kenobi").distance(670.82f).message(new String[] {"este", "", "", "mensaje", ""}).build());
+            add(Satellite.builder().name("skywalker").distance(200).message(new String[] {"", "es", "", "", "secreto"}).build());
+            add(Satellite.builder().name("sato").distance(400).message(new String[] {"este", "", "un", "", ""}).build());
         }};
     }
 
     private List<Satellite> getWrongSatellites(){
         return new ArrayList<>() {{
-            add(Satellite.builder().name("kenobi").distance(20).message(new String[] {"este", "", "", "mensaje", ""}).build());
-            add(Satellite.builder().name("skywalker").distance(50).message(new String[] {"", "es", "", "", "secreto"}).build());
+            add(Satellite.builder().name("kenobi").distance(200).message(new String[] {"este", "", "", "mensaje", ""}).build());
+            add(Satellite.builder().name("skywalker").distance(500).message(new String[] {"", "es", "", "", "secreto"}).build());
             add(Satellite.builder().name("sato").distance(80).message(new String[] {"este", "", "un", "", ""}).build());
         }};
     }

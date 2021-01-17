@@ -44,7 +44,7 @@ public class LocationServiceImpl implements LocationService {
     private Double satoY;
 
     @Override
-    public LocationResponse saveAndGetLocationAndMessage(SatellitesRequest satellitesRequest) {
+    public LocationResponse getLocationAndMessage(SatellitesRequest satellitesRequest) {
 
         satellitesRequest.getSatellites().forEach(this::saveSatellite);
 
