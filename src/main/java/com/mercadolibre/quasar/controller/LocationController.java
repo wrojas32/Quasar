@@ -18,7 +18,7 @@ public class LocationController {
     @Autowired
     private LocationService locationService;
 
-    @ApiOperation(value = "Save satellites data and get location and message from spaceship")
+    @ApiOperation(value = "Save satellites information and get location and message from spaceship")
     @PostMapping
     public ResponseEntity<LocationResponse> getLocationAndMessage(@RequestBody SatellitesRequest satellitesRequest){
         return ResponseEntity.ok(locationService.getLocationAndMessage(satellitesRequest));
