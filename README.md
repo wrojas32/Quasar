@@ -41,9 +41,10 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
         }
     ]
 }
-´´´
+   ``` 
   Response: 
-´´´
+  
+  ```
   {
       "position": {
           "x": "1,0",
@@ -51,7 +52,7 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
       },
       "message": "este es un mensaje secreto"
   }
- ´´´´ 
+  ```
 
 - ### Servicio topsecret_split
 
@@ -62,14 +63,14 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
   Path Parameter Variable {satellite_name}: Parámetro variable que indentifica el nombre del satélite.
   
   Body: 
-  
+    ```
   {
     "distance": 20,
    "message": ["este", "", "", "mensaje", ""]
   }
-
+  ```
   Response: 
-
+  ```
   {
       "name": "kenobi",
       "distance": 20.0,
@@ -81,7 +82,7 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
           ""
       ]
   }
-  
+    ```
  - ### Servicio topsecret_split
  
    Servicio encargado de obtener la localización y mensaje enviando por la nave, tomando los datos ya almacenados previamente.
@@ -90,7 +91,7 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
 
 
    Response: 
-
+  ```
    {
      "position": {
          "x": "1,0",
@@ -98,7 +99,7 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
      },
      "message": "este es un mensaje secreto"
    }
-
+  ```
 
 
 
