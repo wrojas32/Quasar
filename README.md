@@ -22,29 +22,28 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
   
   Body: 
     ```
-      {
-        "satellites": [
-            {
-                "name": "kenobi",
-                "distance": 2,
-                "message": ["este", "", "", "mensaje", ""]
-            },
-            {
-                "name": "skywalker",
-                "distance": 2,
-                "message": ["", "es", "", "", "secreto"]
-            },
-            {
-                "name": "sato",
-                "distance": 3,
-                "message": ["este", "", "un", "", ""]
-            }
-        ]
-      }
+    {
+      "satellites": [
+          {
+              "name": "kenobi",
+              "distance": 2,
+              "message": ["este", "", "", "mensaje", ""]
+          },
+          {
+              "name": "skywalker",
+              "distance": 2,
+              "message": ["", "es", "", "", "secreto"]
+          },
+          {
+              "name": "sato",
+              "distance": 3,
+              "message": ["este", "", "un", "", ""]
+          }
+      ]
+    }
    
  Response: 
   
-    ```
     {
         "position": {
             "x": "1,0",
@@ -71,17 +70,17 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
   
  Response: 
       ```
-      {
-          "name": "kenobi",
-          "distance": 20.0,
-          "message": [
-              "este",
-              "",
-              "",
-              "mensaje",
-              ""
-          ]
-      }
+    {
+        "name": "kenobi",
+        "distance": 20.0,
+        "message": [
+            "este",
+            "",
+            "",
+            "mensaje",
+            ""
+        ]
+    }
 
  - ### Servicio topsecret_split
  
