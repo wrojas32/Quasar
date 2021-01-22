@@ -21,38 +21,38 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
   path: POST /topsecret
   
   Body: 
-  ```
-  {
-    "satellites": [
-        {
-            "name": "kenobi",
-            "distance": 2,
-            "message": ["este", "", "", "mensaje", ""]
-        },
-        {
-            "name": "skywalker",
-            "distance": 2,
-            "message": ["", "es", "", "", "secreto"]
-        },
-        {
-            "name": "sato",
-            "distance": 3,
-            "message": ["este", "", "un", "", ""]
-        }
-    ]
-}
-   ``` 
-  Response: 
+    ```
+      {
+        "satellites": [
+            {
+                "name": "kenobi",
+                "distance": 2,
+                "message": ["este", "", "", "mensaje", ""]
+            },
+            {
+                "name": "skywalker",
+                "distance": 2,
+                "message": ["", "es", "", "", "secreto"]
+            },
+            {
+                "name": "sato",
+                "distance": 3,
+                "message": ["este", "", "un", "", ""]
+            }
+        ]
+      }
+   
+ Response: 
   
-  ```
-  {
-      "position": {
-          "x": "1,0",
-          "y": "0,0"
-      },
-      "message": "este es un mensaje secreto"
-  }
-  ```
+    ```
+    {
+        "position": {
+            "x": "1,0",
+            "y": "0,0"
+        },
+        "message": "este es un mensaje secreto"
+    }
+
 
 - ### Servicio topsecret_split
 
@@ -64,25 +64,25 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
   
   Body: 
     ```
-  {
-    "distance": 20,
-   "message": ["este", "", "", "mensaje", ""]
-  }
-  ```
-  Response: 
-  ```
-  {
-      "name": "kenobi",
-      "distance": 20.0,
-      "message": [
-          "este",
-          "",
-          "",
-          "mensaje",
-          ""
-      ]
-  }
-    ```
+    {
+      "distance": 20,
+     "message": ["este", "", "", "mensaje", ""]
+    }
+  
+ Response: 
+      ```
+      {
+          "name": "kenobi",
+          "distance": 20.0,
+          "message": [
+              "este",
+              "",
+              "",
+              "mensaje",
+              ""
+          ]
+      }
+
  - ### Servicio topsecret_split
  
    Servicio encargado de obtener la localización y mensaje enviando por la nave, tomando los datos ya almacenados previamente.
@@ -91,15 +91,15 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
 
 
    Response: 
-  ```
-   {
-     "position": {
-         "x": "1,0",
-         "y": "0,0"
-     },
-     "message": "este es un mensaje secreto"
-   }
-  ```
+    ```
+     {
+       "position": {
+           "x": "1,0",
+           "y": "0,0"
+       },
+       "message": "este es un mensaje secreto"
+     }
+
 
 
 
