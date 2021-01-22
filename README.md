@@ -21,7 +21,7 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
   path: POST /topsecret
   
   Body: 
-  
+  ```
   {
     "satellites": [
         {
@@ -41,9 +41,9 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
         }
     ]
 }
-
+´´´
   Response: 
-
+´´´
   {
       "position": {
           "x": "1,0",
@@ -51,6 +51,7 @@ Para este fin existen 3 satélites que se encargan de tringular la posición de 
       },
       "message": "este es un mensaje secreto"
   }
+ ´´´´ 
 
 - ### Servicio topsecret_split
 
